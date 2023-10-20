@@ -12,7 +12,7 @@ The goal of this project is to use the PyTorch library to build a convolutional 
 
 Data Source: [Brain Tumor Classification dataset](https://www.kaggle.com/datasets/prathamgrover/brain-tumor-classification).
 
-Below is a sample of tumr images and their respective labels:
+Below is a sample of tumor images and their respective labels:
 
 ![Sample Image](./images/sample_images.png)
 
