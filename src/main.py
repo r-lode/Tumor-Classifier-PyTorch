@@ -20,15 +20,22 @@ if __name__ == "__main__":
     #torch.manual_seed(42) 
     torch.cuda.manual_seed(42)
 
+    #If working in container, set directories accordinly:
+    ZIP_SOURCE = "/pytorch_classifier/data/archive.zip"
+    DESTINATION_DIR = "/pytorch_classifier/data/"
 
-    ZIP_SOURCE = os.path.expanduser("~/pytorch_projects/data/brain_tumor_image_data/archive.zip")
-    DESTINATION_DIR = os.path.expanduser("~/pytorch_projects/data/")
-    load_data(ZIP_SOURCE,DESTINATION_DIR )
+    training_data_dir = "/pytorch_classifier/data/Training"
+    testing_data_dir = "/pytorch_classifier/data/Testing"
+
+    #If not working in docker container:
+    #ZIP_SOURCE = os.path.expanduser("~/pytorch_projects/data/brain_tumor_image_data/archive.zip")
+    #DESTINATION_DIR = os.path.expanduser("~/pytorch_projects/data/")
+    #load_data(ZIP_SOURCE,DESTINATION_DIR )
 
 
     # Set the directory where your training images are located
-    training_data_dir = os.path.expanduser("~/pytorch_projects/data/Training/")
-    testing_data_dir = os.path.expanduser("~/pytorch_projects/data/Testing/")
+    #training_data_dir = os.path.expanduser("~/pytorch_projects/data/Training/")
+    #testing_data_dir = os.path.expanduser("~/pytorch_projects/data/Testing/")
 
     #define an image transform to adapt image data accordingly before modeling
     data_transform = transforms.Compose([

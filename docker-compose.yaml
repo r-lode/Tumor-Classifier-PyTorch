@@ -1,0 +1,12 @@
+version: '2.22.0-desktop.2'
+
+services:
+  my-tumor-app:
+    image: brain-tumor-classifier:2023-10-23
+    command: python /pytorch_classifier/src/main.py
+    container_name: my-tumor-app
+    volumes:
+      - ~/pytorch_projects/data/brain_tumor_image_data/archive.zip:/pytorch_classifier/data/archive.zip
+      - ~/pytorch_projects/data/Training:/pytorch_classifier/data/Training
+      - ~/pytorch_projects/data/Testing:/pytorch_classifier/data/Testing
+    shm_size: 2G
