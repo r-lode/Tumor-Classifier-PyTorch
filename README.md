@@ -4,6 +4,10 @@
 
 1. [ Project Description](#project-description)
 2. [ Libraries and Dependencies](#lib&dep)
+3. [ Example Usage](#ex-use) 
+4. [ Features](#features)
+5. [ Acknowledgements](#ack)
+
 
 <a name="project-description"></a>
 ## Project Description
@@ -34,4 +38,12 @@ Below is a sample of tumor images and their respective labels:
   - pathlib
   - PIL
 
+<a name="ex-use"></a>
+## Example Usage
+
+<a name="features"></a>
+## Features
+
+<a name="ack"></a>
+## Acknowledgements
 
