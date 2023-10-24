@@ -1,5 +1,27 @@
 # Tumor-Classifier-PyTorch
 
+## Project Tasks and Status: 
+
+### Data Preparation
+- [:heavy_check_mark:] Create function to load data into the working directory
+- [:heavy_check_mark:] Create a custom data class
+
+### Model Development
+- [:heavy_check_mark:] Build a baseline neural network class
+- [:heavy_check_mark:] Build train and test model functions
+
+### Project Management
+- [:heavy_check_mark:] Create a function to train and test the model
+- [:heavy_check_mark:] Containerize the project with Docker
+
+### Ongoing Development
+- [ ] Model Optimization
+- [ ] Add Model Optimization functionality
+- [ ] Add functionality to export generated models
+
+### Documentation
+- [ ] Finish README
+
 ## Table of Contents
 
 1. [ Project Description](#project-description)
@@ -14,7 +36,7 @@
 
 The goal of this project is to use the PyTorch library to build a convolutional neural network to classify tumors given image data. Tumors are divided into four classes: no tumor, glioma tumor, meningioma_tumor, and pituitary tumor.
 
-Data Source: [Brain Tumor Classification dataset](https://www.kaggle.com/datasets/prathamgrover/brain-tumor-classification).
+Data Source: [Brain Tumor Classification dataset](https://www.kaggle.com/datasets/prathamgrover/brain-tumor-classification)
 
 Below is a sample of tumor images and their respective labels:
 
@@ -98,8 +120,12 @@ Below is a sample of tumor images and their respective labels:
 <a name="features"></a>
 ## Features
 
+This section will be completed after model optimization and adjustments to model architecture are made. 
 
 
 <a name="ack"></a>
 ## Acknowledgements
+VGG Architecture: [CNN Explainer](https://poloclub.github.io/cnn-explainer/)
+Background Knowledge: [https://www.learnpytorch.io/]
+
 
