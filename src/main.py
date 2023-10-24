@@ -22,13 +22,13 @@ if __name__ == "__main__":
 
 
     ZIP_SOURCE = os.path.expanduser("~/pytorch_projects/data/brain_tumor_image_data/archive.zip")
-    DESTINATION_DIR = os.path.expanduser("~/pytorch")
+    DESTINATION_DIR = os.path.expanduser("~/pytorch_projects/data/")
     load_data(ZIP_SOURCE,DESTINATION_DIR )
 
 
     # Set the directory where your training images are located
-    training_data_dir = "/home/ryan_lode/pytorch/Training/"
-    testing_data_dir = "/home/ryan_lode/pytorch/Testing/"
+    training_data_dir = os.path.expanduser("~/pytorch_projects/data/Training/")
+    testing_data_dir = os.path.expanduser("~/pytorch_projects/data/Testing/")
 
     #define an image transform to adapt image data accordingly before modeling
     data_transform = transforms.Compose([
