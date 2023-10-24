@@ -1,6 +1,6 @@
 # Tumor-Classifier-PyTorch
 
-## Project Tasks and Status: 
+## Project Tasks Status: 
 
 ### Data Preparation
 - [:heavy_check_mark:] Create function to load data into the working directory
@@ -21,6 +21,8 @@
 
 ### Documentation
 - [ ] Finish README
+    - [ ] Update Example Usage After model optimization functionality added
+    - [ ] Create and Add Screenshots of Code Execution
 
 ## Table of Contents
 
@@ -62,6 +64,9 @@ Below is a sample of tumor images and their respective labels:
 
 <a name="ex-use"></a>
 ## Example Usage
+
+Clarification: This is currently in a very raw format and the plan is to add functionality to make it 
+more user friendly.
 
 <pre>
 ```
