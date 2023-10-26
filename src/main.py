@@ -31,8 +31,8 @@ if __name__ == "__main__":
     LOCAL_DESTINATION_DIR = os.path.expanduser("~/pytorch_projects/data/")
 
     #GLOBAL CONSTANTS
-    NUM_EPOCHS = 50
-    SQUARE_IMAGE_SIZE = 220
+    NUM_EPOCHS = 5
+    SQUARE_IMAGE_SIZE = 200
     NUM_NEURONS = 10
     WORKING_IN_CONTAINER = 0
 
@@ -42,6 +42,7 @@ if __name__ == "__main__":
         #get training and test directories
         training_data_dir = "/pytorch_classifier/data/Training"
         testing_data_dir = "/pytorch_classifier/data/Testing"
+        model_save_path = "/pytorch_classifier/models/model_state_dict.pth"
 
 
     else:
@@ -51,6 +52,7 @@ if __name__ == "__main__":
         #get training and test directories
         training_data_dir = os.path.expanduser("~/pytorch_projects/data/Training/")
         testing_data_dir = os.path.expanduser("~/pytorch_projects/data/Testing/")
+        model_save_path = os.path.expanduser("~/pytorch_projects/tumor_classifier/models/model1_state_dict.pth")
       
 
     #define an image transform to adapt image data accordingly before modeling
@@ -87,7 +89,6 @@ if __name__ == "__main__":
     optimizer = torch.optim.Adam(params=model_1.parameters(), lr=0.001)
 
     #start timer
-    
     start_time = timer()
 
     #train model
@@ -101,5 +102,9 @@ if __name__ == "__main__":
 
     #end timer, output total time
     end_time = timer()
-    
+
     print(f"Total model training time: {end_time-start_time:.3f} seconds")
+
+    torch.save(model_1.state_dict(), model_save_path)
+
+    
