@@ -1,16 +1,17 @@
 import torch
-import os
 from torch import nn
 from torchvision import transforms
 from torch.utils.data import DataLoader
+import os
+import zipfile
+from timeit import default_timer as timer 
 
 
 from custom_tumor_dataset import Custom_Image_Dataset
 from CNN import Custom_TinyVGG
 from model_ops import train_evaluate_model
-from import_local_data import load_data
 from calculate_shape import calculate_flattened_size
-
+from import_local_data import load_data
 
 
 if __name__ == "__main__":
@@ -22,27 +23,35 @@ if __name__ == "__main__":
     torch.cuda.manual_seed(42)
 
     #If working in container, set directories accordinly:
-    # ZIP_SOURCE = "/pytorch_classifier/data/archive.zip"
-    # DESTINATION_DIR = "/pytorch_classifier/data/"
-
-    # training_data_dir = "/pytorch_classifier/data/Training"
-    # testing_data_dir = "/pytorch_classifier/data/Testing"
-
+    CONTANER_ZIP_SOURCE = "/pytorch_classifier/data/archive.zip"
+    CONTAINER_DESTINATION_DIR = "/pytorch_classifier/data/"
+   
     #If not working in docker container:
-    ZIP_SOURCE = os.path.expanduser("~/pytorch_projects/data/brain_tumor_image_data/archive.zip")
-    DESTINATION_DIR = os.path.expanduser("~/pytorch_projects/data/")
-    load_data(ZIP_SOURCE,DESTINATION_DIR )
+    LOCAL_ZIP_SOURCE = os.path.expanduser("~/pytorch_projects/data/brain_tumor_image_data/archive.zip")
+    LOCAL_DESTINATION_DIR = os.path.expanduser("~/pytorch_projects/data/")
 
-
-    # Set the directory where your training images are located
-    training_data_dir = os.path.expanduser("~/pytorch_projects/data/Training/")
-    testing_data_dir = os.path.expanduser("~/pytorch_projects/data/Testing/")
-
+    #GLOBAL CONSTANTS
     NUM_EPOCHS = 50
     SQUARE_IMAGE_SIZE = 220
     NUM_NEURONS = 10
-    
+    WORKING_IN_CONTAINER = 0
 
+    if WORKING_IN_CONTAINER:
+        #load data into working directory
+        load_data(CONTANER_ZIP_SOURCE,CONTAINER_DESTINATION_DIR)
+        #get training and test directories
+        training_data_dir = "/pytorch_classifier/data/Training"
+        testing_data_dir = "/pytorch_classifier/data/Testing"
+
+
+    else:
+
+        #load data into working directory
+        load_data(LOCAL_ZIP_SOURCE,LOCAL_DESTINATION_DIR )
+        #get training and test directories
+        training_data_dir = os.path.expanduser("~/pytorch_projects/data/Training/")
+        testing_data_dir = os.path.expanduser("~/pytorch_projects/data/Testing/")
+      
 
     #define an image transform to adapt image data accordingly before modeling
     data_transform = transforms.Compose([
@@ -78,11 +87,11 @@ if __name__ == "__main__":
     optimizer = torch.optim.Adam(params=model_1.parameters(), lr=0.001)
 
     #start timer
-    from timeit import default_timer as timer 
+    
     start_time = timer()
 
     #train model
-    model_0_results = train_evaluate_model(model=model_1, 
+    model_1_results = train_evaluate_model(model=model_1, 
                             train_dataloader=train_dataloader,
                             test_dataloader=test_dataloader,
                             optimizer=optimizer,
@@ -92,4 +101,5 @@ if __name__ == "__main__":
 
     #end timer, output total time
     end_time = timer()
+    
     print(f"Total model training time: {end_time-start_time:.3f} seconds")
