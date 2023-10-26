@@ -16,8 +16,8 @@
 
 ### Ongoing Development
 - [ ] Model Optimization
-- [ ] Add Model Optimization functionality
-- [ ] Add functionality to export generated models
+- [ ] Create Log to Track Model Changes
+- [ :heavy_check_mark:] Add code to export generated models
 
 ### Documentation
 - [ ] Finish README
@@ -131,6 +131,7 @@ This section will be completed after model optimization and adjustments to model
 <a name="ack"></a>
 ## Acknowledgements
 VGG Architecture: [CNN Explainer](https://poloclub.github.io/cnn-explainer/)
+
 Background Knowledge: [https://www.learnpytorch.io/]
 
 
