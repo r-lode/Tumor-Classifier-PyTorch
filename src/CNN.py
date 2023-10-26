@@ -24,8 +24,10 @@ class Custom_TinyVGG(nn.Module):
             num_hidden_neurons = 10, 
             output_shape = 4) #There are four tumor classes
     '''
-    def __init__(self, input_shape, num_hidden_neurons, output_shape: int) -> None:
+    def __init__(self, input_shape, num_hidden_neurons,  output_shape: int, flattened_shape) -> None:
         super().__init__()
+
+
         self.conv_block_1 = nn.Sequential(
             nn.Conv2d(in_channels=input_shape, 
                       out_channels=num_hidden_neurons, 
@@ -57,10 +59,12 @@ class Custom_TinyVGG(nn.Module):
         )
         self.classifier = nn.Sequential(
             nn.Flatten(),
-            nn.Linear(in_features=num_hidden_neurons*56*56,
+            nn.Linear(in_features=flattened_shape,
                       out_features=output_shape)
         )
 
     def forward(self, x: torch.Tensor):
 
-        return self.classifier(self.conv_block_2(self.conv_block_1(x))) 
+        return self.classifier(self.conv_block_2(self.conv_block_1(x)))
+    
+
