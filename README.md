@@ -67,11 +67,11 @@ Below is a sample of tumor images and their respective labels:
 
 Here we set global parameters:
 
--NUM_EPOCHS: Number of iterations our model will train
--SQUARE_IMAGE_SIZE: Images will be resized to nxn pixels. 
-  -NOTE: At time of writing, this project only supports square images
--NUM_NEURONS: Number of hidden neurons in network layers
--MODEL_NAME: Model name that will be included in the model and log files
+- NUM_EPOCHS: Number of iterations our model will train
+- SQUARE_IMAGE_SIZE: Images will be resized to nxn pixels. 
+  - NOTE: At time of writing, this project only supports square images
+- NUM_NEURONS: Number of hidden neurons in network layers
+- MODEL_NAME: Model name that will be included in the model and log files
 
 <pre>
 ```
