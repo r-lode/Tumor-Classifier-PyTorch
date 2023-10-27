@@ -30,7 +30,8 @@
 2. [ Libraries and Dependencies](#lib&dep)
 3. [ Example Usage](#ex-use) 
 4. [ Features](#features)
-5. [ Acknowledgements](#ack)
+5. [ Sample Execution and Output](#sample)
+6. [ Acknowledgements](#ack)
 
 
 <a name="project-description"></a>
@@ -132,6 +133,18 @@ train_evaluate_model function. Finally, we save the model state dict for later u
 - Model Logging: Save model architecture information, as well as model training and testing details
 - Container and Local Data Handling: Seamlessly handle data loading, allowing you to work both in a 
 containerized environment and on a local machine.
+
+<a name="sample"></a>
+## Sample Execution and Output
+
+Code executing with tqdm progress bar:
+
+![Sample Execution](./images/SampleExecution.png)
+
+Example Model Log Output:
+
+![Model Log Example](./images/Model_Log_Example.png)
+
 
 
 <a name="ack"></a>
