@@ -22,6 +22,10 @@ if __name__ == "__main__":
     #torch.manual_seed(42) 
     torch.cuda.manual_seed(42)
 
+
+
+    #Directory Constants
+    
     #If working in container, set directories accordinly:
     CONTANER_ZIP_SOURCE = "/pytorch_classifier/data/archive.zip"
     CONTAINER_DESTINATION_DIR = "/pytorch_classifier/data/"
@@ -30,14 +34,14 @@ if __name__ == "__main__":
     LOCAL_ZIP_SOURCE = os.path.expanduser("~/pytorch_projects/data/brain_tumor_image_data/archive.zip")
     LOCAL_DESTINATION_DIR = os.path.expanduser("~/pytorch_projects/data/")
 
-    #GLOBAL CONSTANTS
+
+    #Model Constants
     NUM_EPOCHS = 50
     SQUARE_IMAGE_SIZE = 200
     NUM_NEURONS = 10
     WORKING_IN_CONTAINER = 0
     MODEL_NAME = "model_1_10_26_2023"
-
-
+    
     if WORKING_IN_CONTAINER:
 
         #load data into working directory
@@ -87,13 +91,12 @@ if __name__ == "__main__":
                     output_shape=4)
     model_1.to(device)
 
-    #loss function
+    #set up loss function
     loss_fn = nn.CrossEntropyLoss()
 
     #set up optimizer
     optimizer = torch.optim.Adam(params=model_1.parameters(), lr=0.001)
 
-    
 
     #train model
     model_1_results = train_evaluate_model(model=model_1, 
@@ -106,7 +109,7 @@ if __name__ == "__main__":
                             loss_fn=loss_fn)
 
     
-
+    #save model state dict for later usage
     torch.save(model_1.state_dict(), model_save_path)
 
     

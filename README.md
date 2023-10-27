@@ -65,60 +65,62 @@ Below is a sample of tumor images and their respective labels:
 <a name="ex-use"></a>
 ## Example Usage
 
-Clarification: This is currently in a very raw format and the plan is to add functionality to make it 
-more user friendly.
+Here we set global parameters:
+
+-NUM_EPOCHS: Number of iterations our model will train
+-SQUARE_IMAGE_SIZE: Images will be resized to nxn pixels. 
+  -NOTE: At time of writing, this project only supports square images
+-NUM_NEURONS: Number of hidden neurons in network layers
+-MODEL_NAME: Model name that will be included in the model and log files
 
 <pre>
 ```
-    #define an image transform to adapt image data accordingly before modeling
-    data_transform = transforms.Compose([
-        transforms.Resize((224, 224)),
-        transforms.TrivialAugmentWide(num_magnitude_bins=31),
-        transforms.RandomHorizontalFlip(),
-        transforms.ToTensor(),
-    ])
-
-    #create 
-    train_dataset = Custom_Image_Dataset(image_directory=training_data_dir, transform=data_transform)
-    test_dataset = Custom_Image_Dataset(image_directory=testing_data_dir, transform=data_transform)
-
-    #create a train and test data loader to fetch batch data
-    train_dataloader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
-    test_dataloader = DataLoader(test_dataset, batch_size=32, shuffle=True, num_workers=4)
-
-    #set num iterations to train model
     NUM_EPOCHS = 50
+    SQUARE_IMAGE_SIZE = 200
+    NUM_NEURONS = 10
+    WORKING_IN_CONTAINER = 0
+    MODEL_NAME = "model_1_10_26_2023"
 
+```
+</pre>
+
+Here is the basic functionality of the main program. First we create an instane of the model, set up a
+loss function and optimizer, and then train and evaluate the model. Model logging is handled in the 
+train_evaluate_model function. Finally, we save the model state dict for later use.
+
+<pre>
+
+```
     #create an instance of model
-    model_0 = Custom_TinyVGG(input_shape=3, # number of color channels (3 for RGB) 
-                    num_hidden_neurons=10, 
+    model_1 = Custom_TinyVGG(input_shape=3, #input num of color channels 1 for greyscale, 3 for RGB
+                    num_hidden_neurons=NUM_NEURONS, 
+                    flattened_shape= flattened_size,
                     output_shape=4)
-    model_0.to(device)
+    model_1.to(device)
 
-    #loss function
+    #set up loss function
     loss_fn = nn.CrossEntropyLoss()
 
     #set up optimizer
-    optimizer = torch.optim.Adam(params=model_0.parameters(), lr=0.001)
+    optimizer = torch.optim.Adam(params=model_1.parameters(), lr=0.001)
 
-    #start timer
-    from timeit import default_timer as timer 
-    start_time = timer()
 
     #train model
-    model_0_results = train_evaluate_model(model=model_0, 
+    model_1_results = train_evaluate_model(model=model_1, 
                             train_dataloader=train_dataloader,
                             test_dataloader=test_dataloader,
                             optimizer=optimizer,
                             device=device,
+                            logfile= logfile_path,
                             epochs=NUM_EPOCHS,
                             loss_fn=loss_fn)
 
-    #end timer, output total time
-    end_time = timer()
-    print(f"Total training time: {end_time-start_time:.3f} seconds")
-```
+    
+    #save model state dict for later usage
+    torch.save(model_1.state_dict(), model_save_path)
 
+
+```
 </pre>
 
 
