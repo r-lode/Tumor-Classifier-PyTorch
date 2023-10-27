@@ -131,7 +131,7 @@ train_evaluate_model function. Finally, we save the model state dict for later u
 - Customizable Model Training: Train and evaluate neural network models with customizable parameters.
 - Data Augmentation: Techniques to enhance model robustness
 - Model Logging: Save model architecture information, as well as model training and testing details
-- Container and Local Data Handling: Seamlessly handle data loading, allowing you to work both in a 
+- Container and Local Data Handling: Seamlessly handle data loading, allowing work in both in a 
 containerized environment and on a local machine.
 
 <a name="sample"></a>
