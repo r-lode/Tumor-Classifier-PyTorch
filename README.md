@@ -16,12 +16,12 @@
 
 ### Ongoing Development
 - [ ] Model Optimization
-- [ ] Create Log to Track Model Changes
+- [:heavy_check_mark:] Create Log to Track Model Changes
 - [ :heavy_check_mark:] Add code to export generated models
 
 ### Documentation
 - [ ] Finish README
-    - [ ] Update Example Usage After model optimization functionality added
+    - [:heavy_check_mark:] Update Example Usage
     - [ ] Create and Add Screenshots of Code Execution
 
 ## Table of Contents
