@@ -1,0 +1,76 @@
+Number of model parameters: 103014
+Model Architecture:
+Custom_TinyVGG(
+  (conv_block_1): Sequential(
+    (0): Conv2d(3, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(10, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU()
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (conv_block_2): Sequential(
+    (0): Conv2d(10, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU()
+    (2): Conv2d(10, 10, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU()
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (classifier): Sequential(
+    (0): Flatten(start_dim=1, end_dim=-1)
+    (1): Linear(in_features=25000, out_features=4, bias=True)
+  )
+)
+
+Model Training Results:
+
+Epoch: 1 | avg_train_loss: 1.2217 | avg_train_acc: 0.4462 | avg_test_loss: 1.5659 | avg_test_acc: 0.3082
+Epoch: 2 | avg_train_loss: 1.0360 | avg_train_acc: 0.5420 | avg_test_loss: 1.7948 | avg_test_acc: 0.3370
+Epoch: 3 | avg_train_loss: 0.9801 | avg_train_acc: 0.5667 | avg_test_loss: 1.8540 | avg_test_acc: 0.3428
+Epoch: 4 | avg_train_loss: 0.9127 | avg_train_acc: 0.6045 | avg_test_loss: 1.5695 | avg_test_acc: 0.3740
+Epoch: 5 | avg_train_loss: 0.8390 | avg_train_acc: 0.6461 | avg_test_loss: 1.8400 | avg_test_acc: 0.3861
+Epoch: 6 | avg_train_loss: 0.8084 | avg_train_acc: 0.6616 | avg_test_loss: 1.6145 | avg_test_acc: 0.4288
+Epoch: 7 | avg_train_loss: 0.7877 | avg_train_acc: 0.6701 | avg_test_loss: 1.6060 | avg_test_acc: 0.4538
+Epoch: 8 | avg_train_loss: 0.7054 | avg_train_acc: 0.7043 | avg_test_loss: 1.9445 | avg_test_acc: 0.4250
+Epoch: 9 | avg_train_loss: 0.6765 | avg_train_acc: 0.7332 | avg_test_loss: 1.7117 | avg_test_acc: 0.4197
+Epoch: 10 | avg_train_loss: 0.6181 | avg_train_acc: 0.7527 | avg_test_loss: 2.1628 | avg_test_acc: 0.4760
+Epoch: 11 | avg_train_loss: 0.6023 | avg_train_acc: 0.7618 | avg_test_loss: 2.0411 | avg_test_acc: 0.4971
+Epoch: 12 | avg_train_loss: 0.5813 | avg_train_acc: 0.7707 | avg_test_loss: 1.6375 | avg_test_acc: 0.4788
+Epoch: 13 | avg_train_loss: 0.5902 | avg_train_acc: 0.7629 | avg_test_loss: 1.7527 | avg_test_acc: 0.4962
+Epoch: 14 | avg_train_loss: 0.5537 | avg_train_acc: 0.7738 | avg_test_loss: 1.9873 | avg_test_acc: 0.4942
+Epoch: 15 | avg_train_loss: 0.5497 | avg_train_acc: 0.7834 | avg_test_loss: 1.8468 | avg_test_acc: 0.5264
+Epoch: 16 | avg_train_loss: 0.5571 | avg_train_acc: 0.7712 | avg_test_loss: 2.1694 | avg_test_acc: 0.4183
+Epoch: 17 | avg_train_loss: 0.5537 | avg_train_acc: 0.7845 | avg_test_loss: 1.8534 | avg_test_acc: 0.5053
+Epoch: 18 | avg_train_loss: 0.5091 | avg_train_acc: 0.7903 | avg_test_loss: 2.2168 | avg_test_acc: 0.4745
+Epoch: 19 | avg_train_loss: 0.5320 | avg_train_acc: 0.7902 | avg_test_loss: 1.6148 | avg_test_acc: 0.5284
+Epoch: 20 | avg_train_loss: 0.4850 | avg_train_acc: 0.8134 | avg_test_loss: 1.8246 | avg_test_acc: 0.5577
+Epoch: 21 | avg_train_loss: 0.5152 | avg_train_acc: 0.7999 | avg_test_loss: 1.8288 | avg_test_acc: 0.5236
+Epoch: 22 | avg_train_loss: 0.4928 | avg_train_acc: 0.7976 | avg_test_loss: 1.6885 | avg_test_acc: 0.5611
+Epoch: 23 | avg_train_loss: 0.4826 | avg_train_acc: 0.8102 | avg_test_loss: 2.0242 | avg_test_acc: 0.5260
+Epoch: 24 | avg_train_loss: 0.4755 | avg_train_acc: 0.8099 | avg_test_loss: 1.7018 | avg_test_acc: 0.5635
+Epoch: 25 | avg_train_loss: 0.4599 | avg_train_acc: 0.8223 | avg_test_loss: 2.4045 | avg_test_acc: 0.5740
+Epoch: 26 | avg_train_loss: 0.4620 | avg_train_acc: 0.8164 | avg_test_loss: 2.3936 | avg_test_acc: 0.5288
+Epoch: 27 | avg_train_loss: 0.4700 | avg_train_acc: 0.8195 | avg_test_loss: 1.9692 | avg_test_acc: 0.5293
+Epoch: 28 | avg_train_loss: 0.4464 | avg_train_acc: 0.8262 | avg_test_loss: 2.1284 | avg_test_acc: 0.5188
+Epoch: 29 | avg_train_loss: 0.4554 | avg_train_acc: 0.8218 | avg_test_loss: 1.9906 | avg_test_acc: 0.5202
+Epoch: 30 | avg_train_loss: 0.4517 | avg_train_acc: 0.8188 | avg_test_loss: 2.0602 | avg_test_acc: 0.5077
+Epoch: 31 | avg_train_loss: 0.4361 | avg_train_acc: 0.8271 | avg_test_loss: 1.8421 | avg_test_acc: 0.5226
+Epoch: 32 | avg_train_loss: 0.4100 | avg_train_acc: 0.8435 | avg_test_loss: 2.1671 | avg_test_acc: 0.5779
+Epoch: 33 | avg_train_loss: 0.4283 | avg_train_acc: 0.8376 | avg_test_loss: 2.1928 | avg_test_acc: 0.5111
+Epoch: 34 | avg_train_loss: 0.4135 | avg_train_acc: 0.8405 | avg_test_loss: 2.3824 | avg_test_acc: 0.5361
+Epoch: 35 | avg_train_loss: 0.4142 | avg_train_acc: 0.8363 | avg_test_loss: 2.1756 | avg_test_acc: 0.5293
+Epoch: 36 | avg_train_loss: 0.4212 | avg_train_acc: 0.8356 | avg_test_loss: 2.1097 | avg_test_acc: 0.5659
+Epoch: 37 | avg_train_loss: 0.3916 | avg_train_acc: 0.8496 | avg_test_loss: 2.1162 | avg_test_acc: 0.6135
+Epoch: 38 | avg_train_loss: 0.3820 | avg_train_acc: 0.8544 | avg_test_loss: 2.2301 | avg_test_acc: 0.5495
+Epoch: 39 | avg_train_loss: 0.4015 | avg_train_acc: 0.8447 | avg_test_loss: 1.9545 | avg_test_acc: 0.5514
+Epoch: 40 | avg_train_loss: 0.3804 | avg_train_acc: 0.8594 | avg_test_loss: 1.9807 | avg_test_acc: 0.6212
+Epoch: 41 | avg_train_loss: 0.3871 | avg_train_acc: 0.8532 | avg_test_loss: 1.8447 | avg_test_acc: 0.5784
+Epoch: 42 | avg_train_loss: 0.3987 | avg_train_acc: 0.8472 | avg_test_loss: 1.7675 | avg_test_acc: 0.6332
+Epoch: 43 | avg_train_loss: 0.3794 | avg_train_acc: 0.8540 | avg_test_loss: 1.8642 | avg_test_acc: 0.5534
+Epoch: 44 | avg_train_loss: 0.3661 | avg_train_acc: 0.8601 | avg_test_loss: 1.8242 | avg_test_acc: 0.5846
+Epoch: 45 | avg_train_loss: 0.3859 | avg_train_acc: 0.8539 | avg_test_loss: 1.8230 | avg_test_acc: 0.5553
+Epoch: 46 | avg_train_loss: 0.3740 | avg_train_acc: 0.8613 | avg_test_loss: 2.0190 | avg_test_acc: 0.5486
+Epoch: 47 | avg_train_loss: 0.3780 | avg_train_acc: 0.8544 | avg_test_loss: 1.9059 | avg_test_acc: 0.5942
+Epoch: 48 | avg_train_loss: 0.3912 | avg_train_acc: 0.8535 | avg_test_loss: 1.8533 | avg_test_acc: 0.5875
+Epoch: 49 | avg_train_loss: 0.3797 | avg_train_acc: 0.8548 | avg_test_loss: 2.2356 | avg_test_acc: 0.5813
+Epoch: 50 | avg_train_loss: 0.3777 | avg_train_acc: 0.8563 | avg_test_loss: 2.2798 | avg_test_acc: 0.6010
+Total model training time: 169.945 seconds

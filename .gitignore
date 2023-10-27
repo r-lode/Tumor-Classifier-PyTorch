@@ -1,3 +1,6 @@
 #ignore pycache files
 __pycache__/
 *.pyc
+
+#ignore model files
+/models/*.pth
