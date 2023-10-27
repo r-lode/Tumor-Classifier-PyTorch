@@ -17,7 +17,7 @@
 ### Ongoing Development
 - [ ] Model Optimization
 - [:heavy_check_mark:] Create Log to Track Model Changes
-- [ :heavy_check_mark:] Add code to export generated models
+- [:heavy_check_mark:] Add code to export generated models
 
 ### Documentation
 - [ ] Finish README
@@ -127,7 +127,11 @@ train_evaluate_model function. Finally, we save the model state dict for later u
 <a name="features"></a>
 ## Features
 
-This section will be completed after model optimization and adjustments to model architecture are made. 
+- Customizable Model Training: Train and evaluate neural network models with customizable parameters.
+- Data Augmentation: Techniques to enhance model robustness
+- Model Logging: Save model architecture information, as well as model training and testing details
+- Container and Local Data Handling: Seamlessly handle data loading, allowing you to work both in a 
+containerized environment and on a local machine.
 
 
 <a name="ack"></a>
