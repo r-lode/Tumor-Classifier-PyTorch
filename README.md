@@ -22,7 +22,7 @@
 ### Documentation
 - [ ] Finish README
     - [:heavy_check_mark:] Update Example Usage
-    - [ ] Create and Add Screenshots of Code Execution
+    - [:heavy_check_mark:] Create and Add Screenshots of Code Execution
 
 ## Table of Contents
 
