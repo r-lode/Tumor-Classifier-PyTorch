@@ -3,26 +3,26 @@
 ## Project Tasks Status: 
 
 ### Data Preparation
-- [:heavy_check_mark:] Create function to load data into the working directory
+- [x] Create function to load data into the working directory
 - [:heavy_check_mark:] Create a custom data class
 
 ### Model Development
-- [:heavy_check_mark:] Build a baseline neural network class
-- [:heavy_check_mark:] Build train and test model functions
+- [x] Build a baseline neural network class
+- [x] Build train and test model functions
 
 ### Project Management
-- [:heavy_check_mark:] Create a function to train and test the model
-- [:heavy_check_mark:] Containerize the project with Docker
+- [x] Create a function to train and test the model
+- [x] Containerize the project with Docker
 
 ### Ongoing Development
 - [ ] Model Optimization
-- [:heavy_check_mark:] Create Log to Track Model Changes
-- [:heavy_check_mark:] Add code to export generated models
+- [x] Create Log to Track Model Changes
+- [x] Add code to export generated models
 
 ### Documentation
 - [ ] Finish README
-    - [:heavy_check_mark:] Update Example Usage
-    - [:heavy_check_mark:] Create and Add Screenshots of Code Execution
+    - [x] Update Example Usage
+    - [x] Create and Add Screenshots of Code Execution
 
 ## Table of Contents
 
