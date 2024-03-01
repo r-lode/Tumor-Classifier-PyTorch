@@ -4,7 +4,7 @@
 
 ### Data Preparation
 - [x] Create function to load data into the working directory
-- [:heavy_check_mark:] Create a custom data class
+- [x] Create a custom data class
 
 ### Model Development
 - [x] Build a baseline neural network class
